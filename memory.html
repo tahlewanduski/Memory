@@ -1,0 +1,57 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="22003660" />
+    <title>Memory en Javascript</title>
+
+    <link rel="stylesheet" type="text/css" href="memory.css">
+
+    <script type="text/javascript" src="memory.js"></script>
+
+</head>
+<body>
+<div id="wrapper">
+    <section class="controles">
+        <h2>Memory</h2>
+        <div>
+            <ul id="best">
+                <li>Meilleur score en 6x4</li>
+                <li id="bestscore">aucun</li>
+            </ul>
+        </div>
+        <div>
+            <ul id="stat"><li>Coups</li><li id="coups"></li><li>Score</li><li id="score"></li><li> Paire trouvées</li><li id="paire"></li></ul>
+        </div>
+        <div id="parametre">
+            <ul>
+                <li><label>Nombre de colonnes</label></li>
+                <li><label><input id="col" type="text" value="" /></label></li>
+                <li>Nombre de rangées</li><li> <input id="lin" type="text" value="" /></li>
+                <li><input type="submit" id="start" value="Démarrer une nouvelle partie"></li>
+            </ul>
+        </div>
+        <input type="submit" id="memo" value="Enregistrer la partie">
+    </section>
+
+
+    <div id="jeu"></div>
+</div>
+<script>
+    // initialiser les capteurs d'évènements ici
+    // et écrire les fonctions callback dans memory.js
+    "use strict";
+
+    document.getElementById("col").setAttribute('value', col);
+    document.getElementById("lin").setAttribute('value', lin);
+    let start = document.getElementById("start");
+    start.addEventListener("click", demarrerNouvellePartie);
+
+    let memo = document.getElementById("memo");
+    memo.addEventListener("click", enregistrerPartie);
+    
+    reprendrePartieEnregistree();
+</script>
+
+</body>
+</html>
